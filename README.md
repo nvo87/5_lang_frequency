@@ -20,11 +20,11 @@ For example, you may download "War and peace" by L. Tolstoy from [here](http://w
 
 **lang_frequency.py** returns:
 ```
-и  
-в  
-не  
-что  
-он  
+and  
+in  
+not  
+what  
+he  
 ```
 
 Start on windows is the same.
