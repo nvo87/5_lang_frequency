@@ -2,10 +2,6 @@ import argparse
 from data_loaders import load_from_txt
 
 
-def load_data(filepath):
-    pass
-
-
 def count_words_frequency(text) -> dict:
     text_without_punctuation = ''.join(char for char in text
                                        if char not in '.,!@#$%^*()?:;№"_-=+')
