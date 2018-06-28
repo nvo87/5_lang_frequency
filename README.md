@@ -6,7 +6,10 @@ This script counts words using frequency and sort it out in ascending order. You
 
 Script requires you Python 3.5  
 Start on Linux
-
+Before launch you have to install all necessary libraries. You may install using requirements.txt
+```
+pip install -r requirements.txt
+```
 ```bash
 $ python lang_frequency.py <filepath/to/.txt> -n
 ```

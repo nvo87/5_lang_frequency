@@ -1,7 +1,6 @@
 import argparse
 import re
 from collections import Counter
-from collections import namedtuple
 from data_loaders import load_from_txt
 
 
@@ -18,17 +17,16 @@ def parse_args():
     return parser.parse_args()
 
 
-def calc_most_frequent_words(text, words_amount=10) -> 'list of namedtuples':
+def get_most_frequent_words(text, words_amount=10) -> 'list of tuples':
     all_literals = r'\w+'
     words = re.findall(all_literals, text.lower())
-    most_frequent_words = Counter(words).most_common(words_amount)
-    words_data = namedtuple('words_data', ['word', 'frequency'])
-    return [words_data(*word) for word in most_frequent_words]
+    return Counter(words).most_common(words_amount)
 
 
 if __name__ == '__main__':
-    words_amount = parse_args().words_amount
-    text_filepath = parse_args().file_path
+    args = parse_args()
+    words_amount = args.words_amount
+    text_filepath = args.file_path
 
     try:
         text = load_from_txt(text_filepath)
@@ -37,6 +35,6 @@ if __name__ == '__main__':
     if not text:
         exit('File is corrupted or has unknown encoding')
 
-    most_frequent_words = calc_most_frequent_words(text, words_amount)
-    for word_data in most_frequent_words:
-        print(word_data.word, word_data.frequency)
+    most_frequent_words = get_most_frequent_words(text, words_amount)
+    for word, count in most_frequent_words:
+        print(word, count)

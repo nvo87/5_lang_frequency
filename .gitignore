@@ -1,5 +1,6 @@
 bars.json
 *.txt
+!requirements.txt
 
 # Created by https://www.gitignore.io/api/django,python,windows,sublimetext
 
