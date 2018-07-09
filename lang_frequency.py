@@ -9,7 +9,8 @@ def parse_args():
         description='Script finds N more frequent words in text.')
     parser.add_argument('file_path', help='path to txt file.')
     parser.add_argument(
-        '-words_amount',
+        '-n',
+        '--words_amount',
         help='Words amount to show in result rating.',
         type=int,
         default=10
